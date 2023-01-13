@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
 	//int testsResult = run_all_tests(argc, argv);
 	//if(testsResult > 0)
 	//	return testsResult != 0;
-
+	//modified by francesco martino
 	// This is the normal start
 	initscr();
 	start_color();
