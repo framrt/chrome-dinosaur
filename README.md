@@ -5,7 +5,7 @@
 
 This is a fork of the original work by farbodahm (Farbod Ahmadian), to which I am extremely grateful.\
 This repository has been created for educational purposes only.
-
+//modified
 #### Commands
 
 You can jump using 'Space' Key, and you can fire when "Prize" is equal to 1 using 'k' Key.
