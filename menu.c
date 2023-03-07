@@ -7,7 +7,7 @@
 #include "game.h"
 #include "appearance.h"
 
-
+//\fn void startMenu()
 void startMenu() {
 	struct user firstUser;
 	int highScore;
@@ -35,7 +35,7 @@ void startMenu() {
 	noecho();
 	startEngine(highScore, firstUser);
 }
-
+//\fn void endGame(int score, int highScore, int diY, int diX, struct user firstUser)
 void endGame(int score, int highScore, int diY, int diX, struct user firstUser) {
 	nodelay(stdscr, FALSE);
 	init_pair(2,COLOR_RED,COLOR_BLACK);

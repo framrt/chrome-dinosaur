@@ -2,23 +2,24 @@
 #include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
-
 #include "menu.h"
 #include "game.h"
 #include "appearance.h"
 #include "minunit.h"
 
-// Check if the game is going to be finished in this turn of loop
-int checkGame(int y, int x, int diY, int diX) {
+
+// \fn checkGame(int y, int x, int diY, int diX)
+// \brief Check if the game is going to be finished in this turn of loop
+int checkGame(int y, int x, int diY, int diX) {	// \fn 
 	if (diY == y) {
 		if (abs((diX+14)-x) <= 4) {
 			return 0;
 		}
 	}
-	return 1;
+	return 1; //\return la funzione ritorna 0 o 1.
 }
-
-// Make game faster
+//\fn int computeTime(int delayTime)
+//\brief Make game faster
 int computeTime(int delayTime) {
 	if (delayTime >= 250000) {
 		delayTime -= 1000;
@@ -29,9 +30,9 @@ int computeTime(int delayTime) {
 	else {
 		delayTime -= 200;
 	}
-	return delayTime;
+	return delayTime; //\return la funzione ritorna delaytime
 }
-
+//\fn void showdinosaur(int diY, int diX)
 // Which dinosaur should be printed
 void showdinosaur(int diY, int diX) {
 	static int counter = 0;
@@ -44,8 +45,8 @@ void showdinosaur(int diY, int diX) {
 		counter--;
 	}
 }
-
-// Give user the prize
+//\fn computePrize(int score, int usedPrize)
+//\brief Give user the prize
 int computePrize(int score, int usedPrize) {
 	if (score >= 20 && score <= 40 && usedPrize == 0) {
 		return 1;
@@ -56,10 +57,10 @@ int computePrize(int score, int usedPrize) {
 	else if (score >= 100 && score <= 120 && usedPrize <= 2) {
 		return 1;
 	}	
-	return 0;
+	return 0; //\return la funzione ritorna 0 o 1.
 }
-
-// The main engine!
+//\fn startEngine(int highScore, struct user firstUser)
+//\brief The main engine!
 void startEngine(int highScore, struct user firstUser) {
     srand(time(NULL));
 	int x, y, diX=5, prize=0, usedPrize=0, score=0, delayTime = 300000
@@ -130,18 +131,20 @@ void startEngine(int highScore, struct user firstUser) {
 			diY -= 7;
 			jumping = 3;
 		}
+		//\fn showdinosaur(diY, diX)
 		showdinosaur(diY, diX);
 		if (userInput == ' ') {
+			//fn cleardinosaurDown(diY, diX);
 			cleardinosaurDown(diY, diX);		
 		}
 		if (x-diX <= 7) {
 			x -= 10;
 		}
         if (cactusNum == 0) {
-        	cactus1(y, x);
+        	cactus1(y, x); //\fn cactus1(y, x)
 		}
 		else {
-			cactus2(y, x);
+			cactus2(y, x); //\fn cactus2(y, x)
 		}
 		if (x-diX <= 7) {
 			x += 10;
@@ -194,8 +197,8 @@ void all_tests() {
 	mu_run_test(test_foo);
 	mu_run_test(test_bar);
 }
-
-// call this to run all tests
+//\fn int run_all_tests(int argc, char **argv)
+//\brief call this to run all tests 
 int run_all_tests(int argc, char **argv) {
 	if(argc<2 || strcmp(argv[1],"-test")!=0) {
 		return -1;

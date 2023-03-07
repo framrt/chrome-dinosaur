@@ -1,5 +1,13 @@
 #include <ncurses.h>
-
+/*
+	@file appearance.c
+	@author Giorgio Bianco Dolino
+	@version 1.0
+*/
+/**
+ * \fn void dinosaur1(int y, int x)
+ * \brief ricrea il dinosauro1
+ */
 void dinosaur1(int y, int x) {
 	mvprintw(y-4, x, "          e-e  ");
 	mvprintw(y-3, x, "        /(\\_/)");
@@ -7,7 +15,10 @@ void dinosaur1(int y, int x) {
 	mvprintw(y-1, x, " '-._, )/'");
 	mvprintw(y, x,   "      \\/");
 }
-
+/**
+ * \fn dinosaur2(int y, int x)
+ * \brief ricrea il dinosauro2
+ */
 void dinosaur2(int y, int x) {
 	mvprintw(y-4, x, "          e-e  ");
 	mvprintw(y-3, x, "        /(\\_/)");
@@ -15,7 +26,10 @@ void dinosaur2(int y, int x) {
 	mvprintw(y-1, x, " '-._, )/'");
 	mvprintw(y, x,   "      /\\");
 }
-
+/**
+ * \fn void cactus1(int y, int x)
+ * \brief ricrea il cactus2 
+ */
 void cactus1(int y, int x) {
 	mvprintw(y-5, x, "    _ ");
 	mvprintw(y-4, x, " _ ( )   ");
@@ -24,7 +38,10 @@ void cactus1(int y, int x) {
 	mvprintw(y-1, x, "   |  /'");
 	mvprintw(y, x, "   | |");
 }
-
+/**
+ * \fn void cactus2(int y, int x)
+ * \brief ricrea il cactus2
+ */
 void cactus2(int y, int x) {
 	init_pair(5,COLOR_GREEN,COLOR_BLACK);
 	attron(COLOR_PAIR(5));
@@ -37,7 +54,10 @@ void cactus2(int y, int x) {
 	mvprintw(y, x, "   | |");
 	attroff(COLOR_PAIR(5));
 }
-
+/**
+ * \fn void sun(int y, int x)
+ * \brief ricrea il sole
+ */
 void sun(int y, int x) {
 	attron(COLOR_PAIR(6));
 	mvprintw(y-8, x, "      ;   :   ;");
@@ -51,7 +71,10 @@ void sun(int y, int x) {
 	mvprintw(y, x, "      ;   :   ;");
 	attroff(COLOR_PAIR(6));
 }
-
+/**
+ * \fn void moon(int y, int x)
+ * \brief ricrea la luna
+ */
 void moon(int y, int x) {
 	attron(COLOR_PAIR(4));
 	mvprintw(y-8, x, "                      ");
@@ -65,7 +88,10 @@ void moon(int y, int x) {
 	mvprintw(y, x, "    ```                 ");
 	attroff(COLOR_PAIR(4));
 }
-
+/**
+ * \fn void showLoss(int y, int x)
+ * \brief mostra la sconfitta al player
+ */
 void showLoss(int y, int x) {
 	mvprintw(y-6, x-15, "88");
 	mvprintw(y-5, x-15, "88");
@@ -78,7 +104,10 @@ void showLoss(int y, int x) {
 	mvprintw(y+3, x-15, "Press 'r' to play again!");
 	mvprintw(y+4, x-15, "Or 'q' to exit from game.");
 }
-
+/**
+ * \fn void showTrex(int x, int y)
+ * \brief mostra il Trex 
+ */
 void showTrex(int x, int y) {
 	mvprintw(x-7, y-25, "  ,d");
 	mvprintw(x-6, y-25, "  88");
@@ -89,7 +118,9 @@ void showTrex(int x, int y) {
 	mvprintw(x-1, y-25, "  \"Y888 88          `\"Ybbd8\"' 8P\'     `Y8");
 }
 
-
+/**
+ * \fn clearCactus1(int y, int x) 
+ */
 void clearCactus1(int y, int x) {
 	mvprintw(y-6, x+7, "        ");
 	mvprintw(y-5, x+8, "           ");
@@ -108,7 +139,9 @@ void clearCactus1(int y, int x) {
 		mvprintw(y, 0, "    ");
 	}
 }
-
+/**
+ * \fn void cleardinosaurDown(int diY, int diX)
+ */
 void cleardinosaurDown(int diY, int diX) {
 	mvprintw(diY+3, diX+10, "              ");
 	mvprintw(diY+4, diX+8, "              ");
@@ -116,7 +149,9 @@ void cleardinosaurDown(int diY, int diX) {
 	mvprintw(diY+6, diX, "                 ");
 	mvprintw(diY+7, diX, "                "); 
 }
-
+/**
+ * \fn void cleardinosaurUp(int diY, int diX)
+ */
 void cleardinosaurUp(int diY, int diX) {
     mvprintw(diY-7, diX+4, "         ");
 	mvprintw(diY-8, diX+1, "               ");

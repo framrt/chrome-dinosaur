@@ -1,0 +1,34 @@
+\hypertarget{minunit_8h_source}{}\doxysection{minunit.\+h}
+\mbox{\hyperlink{minunit_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ file:\ minunit.h\ taken\ from\ by\ Jera\ design\ -\/\ https://jera.com/techinfo/jtns/jtn002\ and\ modified\ */}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ MINUNIT\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ MINUNIT\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{minunit_8h_a91aa4203331e915f2d20dd26579791ee}{tests\_run}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{minunit_8h_abf0c823d1963d8f0376e85f1b4973fb5}{tests\_passed}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{minunit_8h_ac25aec0309d9edc92fba6170d7eb2ff6}{run\_all\_tests}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ mu\_assert(message,\ test)\ do\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ if\ (!(test))\ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ printf("{}\%s\(\backslash\)n"{}},message);\ \(\backslash\)}
+\DoxyCodeLine{00017\ \ \ \ \ else\ \(\backslash\)}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ tests\_passed++;\ \(\backslash\)}
+\DoxyCodeLine{00019\ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{00020\ while\ (0)}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ mu\_run\_test(test)\ do\ \(\backslash\)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\{\ \(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ test();\ \(\backslash\)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ tests\_run++;\ \(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\}\ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{while\ (0)}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
